@@ -24,7 +24,34 @@ nav a{transition:color .2s}nav a:hover,nav a:focus-visible{color:#ffe7ac}
 :focus-visible{outline:2px solid #ffe6ad;outline-offset:3px}
 @media(max-width:540px){nav{gap:13px;padding:12px 14px}.hero{padding-top:80px}.section{padding:23px 17px}.link-card{padding:19px 17px}body{background-attachment:scroll}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body::after,.moon,.sparkle{animation:none}*,*::before,*::after{transition:none!important}}
-</style></head><body><header><nav><a class="brand" href="index.html">☾ ミケ丸</a><a href="index.html">← ホームに戻る</a></nav></header><main><div class="intro"><div class="sparkle">☾ ✦</div><div class="eyebrow">OFFICIAL LINKS</div><h1>LINK</h1><p>ミケ丸の各種リンクはこちら ฅ( 'ω' ฅ)</p></div>
+
+/* Fantasy night sky enhancements */
+body{position:relative;isolation:isolate;background-attachment:fixed}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(circle at 13% 19%,#d4e9ffbb 0 1px,transparent 2px),radial-gradient(circle at 75% 32%,#fff0cb99 0 1px,transparent 2px),radial-gradient(circle at 36% 72%,#c9c3ff99 0 1px,transparent 2px);background-size:270px 320px,390px 430px,310px 360px;animation:sky-glow 8s ease-in-out infinite alternate}
+@keyframes sky-glow{from{opacity:.35}to{opacity:.9}}
+.shooting-stars{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.shooting-star{position:absolute;top:var(--top);left:-30%;width:110px;height:1px;transform:rotate(-24deg);background:linear-gradient(90deg,transparent,#bce6ff,#fff5d6);filter:drop-shadow(0 0 5px #9fd7ff);opacity:0;animation:shoot 15s linear infinite;animation-delay:var(--delay)}
+@keyframes shoot{0%,78%{transform:translate3d(0,0,0) rotate(-24deg);opacity:0}79%{opacity:.9}85%{transform:translate3d(130vw,36vh,0) rotate(-24deg);opacity:0}100%{opacity:0}}
+.hero-character,.profile-character{filter:drop-shadow(0 0 14px #8acaff55) drop-shadow(0 0 32px #f6dca633);transition:filter .4s ease}
+.section h2::before,.group h2::before{content:'✧';color:#ffe2a7;margin-right:.55em;text-shadow:0 0 12px #ffdca9}
+.section h2,.group h2{text-shadow:0 0 16px #90bfff44}
+.tile,.link-card,.section{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.tile:hover,.link-card:hover{border-color:#a5d7ff;box-shadow:0 8px 32px #7bbcff2b}
+.reveal-ready{opacity:0;transform:translateY(16px)}
+.reveal-ready.is-visible{opacity:1;transform:translateY(0)}
+.menu-toggle{display:none;align-items:center;gap:8px;background:#1b3559;color:#fff;border:1px solid #7496c5;border-radius:12px;padding:9px 13px;font:inherit;cursor:pointer;min-height:44px}
+@media(max-width:700px){
+header nav.site-nav{overflow:visible;white-space:normal;flex-wrap:wrap;justify-content:space-between;padding:9px 16px;gap:6px}
+.site-nav .brand{margin-right:auto}
+.menu-toggle{display:inline-flex}
+.site-nav .nav-links{display:none;flex-basis:100%;flex-direction:column;gap:2px;padding:9px 0 5px}
+.site-nav .nav-links.is-open{display:flex}
+.site-nav .nav-links a{display:block;padding:11px 13px;border-radius:10px;background:#1b3457bb;min-height:44px}
+.site-nav .nav-links a:focus-visible,.menu-toggle:focus-visible{outline:2px solid #ffdf9b;outline-offset:2px}
+}
+@media(min-width:701px){.site-nav .nav-links{display:flex;align-items:center;gap:14px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}body::after,.shooting-star{animation:none!important}.shooting-star{display:none}.reveal-ready{opacity:1!important;transform:none!important}.tile,.link-card,.section{transition:none!important}}
+</style></head><body><div class="shooting-stars" aria-hidden="true"><i class="shooting-star" style="--top:16%;--delay:0s"></i><i class="shooting-star" style="--top:43%;--delay:6s"></i><i class="shooting-star" style="--top:72%;--delay:11s"></i></div><header><nav><a class="brand" href="index.html">☾ ミケ丸</a><a href="index.html">← ホームに戻る</a></nav></header><main><div class="intro"><div class="sparkle">☾ ✦</div><div class="eyebrow">OFFICIAL LINKS</div><h1>LINK</h1><p>ミケ丸の各種リンクはこちら ฅ( 'ω' ฅ)</p></div>
 <section class="group"><h2>配信・SNS</h2>
 <!-- ★ IRIAM・XのURL差し替え場所：下記 href を編集してください ★ -->
 <a class="link-card" href="https://web.iriam.app/s/user/uSCKqp8z38?uuid=869910de" target="_blank" rel="noopener noreferrer"><span><strong>IRIAM</strong><small>配信はこちらから</small></span><span class="arrow" aria-hidden="true">↗</span></a>
@@ -36,4 +63,18 @@ nav a{transition:color .2s}nav a:hover,nav a:focus-visible{color:#ffe7ac}
 <a class="link-card" href="https://fansfer.p-dlt.com/bHLFfTbjteTK03qSPdU3t4FlR7l1" target="_blank" rel="noopener noreferrer"><span><strong>fansfer</strong><small>fansferのページへ</small></span><span class="arrow" aria-hidden="true">↗</span></a>
 </section>
 <!-- ★ 新しいリンクを増やす場合は、上の a class="link-card" のまとまりをコピーして、URL・名前・説明を変更してください ★ -->
-<a class="back" href="index.html">← 公式ホームページへ戻る</a></main><footer>© ミケ丸 · Official Website</footer></body></html>
+<a class="back" href="index.html">← 公式ホームページへ戻る</a></main><footer>© ミケ丸 · Official Website</footer><script>
+(function(){
+ const button=document.querySelector('.menu-toggle');
+ const links=document.querySelector('.nav-links');
+ if(button&&links){
+   button.addEventListener('click',()=>{const open=links.classList.toggle('is-open');button.setAttribute('aria-expanded',String(open));button.textContent=open?'✕ 閉じる':'☰ メニュー';});
+   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('is-open');button.setAttribute('aria-expanded','false');button.textContent='☰ メニュー';}));
+ }
+ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+   const targets=document.querySelectorAll('.tile,.link-card,.section,.group');
+   const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}})},{threshold:0.06,rootMargin:'0px 0px 40px 0px'});
+   targets.forEach(el=>{el.classList.add('reveal-ready');observer.observe(el)});
+ }
+})();
+</script></body></html>
