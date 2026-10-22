@@ -115,57 +115,91 @@ header nav.site-nav{overflow:visible;white-space:normal;flex-wrap:wrap;justify-c
   display: block;
 }
 
-/* ★ 星がそれぞれ違うタイミングで瞬く ★ */
 
+/* ★ 幻想的な星空：大小の星が別々に瞬く ★ */
+
+/* 小さな星：優しくゆっくり瞬く */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
+
   background-image:
-    radial-gradient(2px 2px at 12% 18%, #fff 98%, transparent),
-    radial-gradient(3px 3px at 76% 26%, #c6eaff 98%, transparent),
-    radial-gradient(2px 2px at 38% 64%, #fff 98%, transparent),
-    radial-gradient(3px 3px at 85% 78%, #ffe9b0 98%, transparent),
-    radial-gradient(2px 2px at 22% 89%, #b9d9ff 98%, transparent);
-  animation: starTwinkle 4.7s ease-in-out infinite alternate;
+    radial-gradient(circle 1px at 12% 18%, #ffffff 98%, transparent),
+    radial-gradient(circle 1px at 76% 26%, #c6eaff 98%, transparent),
+    radial-gradient(circle 1px at 38% 64%, #ffffff 98%, transparent),
+    radial-gradient(circle 1px at 85% 78%, #ffe9b0 98%, transparent),
+    radial-gradient(circle 1px at 22% 89%, #b9d9ff 98%, transparent),
+    radial-gradient(circle 1px at 61% 43%, #ffffff 98%, transparent),
+    radial-gradient(circle 1px at 9% 56%, #c6eaff 98%, transparent),
+    radial-gradient(circle 1px at 92% 12%, #ffffff 98%, transparent);
+
+  animation: smallStars 5.3s ease-in-out infinite;
 }
 
+/* 大きな星：少し遅れてキラッと輝く */
 body::before {
-  animation: starTwinkleSoft 7.3s ease-in-out infinite alternate;
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(circle 2px at 27% 32%, #ffffff 98%, transparent),
+    radial-gradient(circle 3px at 72% 58%, #ffe9b0 98%, transparent),
+    radial-gradient(circle 2px at 46% 83%, #b9d9ff 98%, transparent),
+    radial-gradient(circle 3px at 88% 39%, #ffffff 98%, transparent);
+
+  filter: drop-shadow(0 0 4px #a9d9ff);
+  animation: bigStars 8.7s ease-in-out infinite;
 }
 
-@keyframes starTwinkle {
+/* 小さな星の瞬き */
+@keyframes smallStars {
   0%, 100% {
-    opacity: 0.2;
-    filter: brightness(0.8);
+    opacity: 0.25;
   }
-  45% {
-    opacity: 0.9;
-    filter: brightness(1.8);
+  30% {
+    opacity: 0.8;
   }
-  70% {
-    opacity: 0.4;
-    filter: brightness(1);
+  65% {
+    opacity: 0.35;
   }
-}
-
-@keyframes starTwinkleSoft {
-  0%, 100% {
-    opacity: 0.7;
-  }
-  50% {
+  85% {
     opacity: 1;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  body::after,
-  body::before {
-    animation: none;
+/* 大きな星の瞬き */
+@keyframes bigStars {
+  0%, 100% {
+    opacity: 0.15;
+    filter: brightness(0.8) drop-shadow(0 0 2px #a9d9ff);
+  }
+  35% {
+    opacity: 0.35;
+  }
+  60% {
+    opacity: 1;
+    filter: brightness(1.8) drop-shadow(0 0 8px #ffe9b0);
+  }
+  80% {
+    opacity: 0.4;
   }
 }
+
+/* 動きを抑える設定 */
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+    opacity: 0.6;
+  }
+}
+
 </style></head><body id="top"><header><nav class="site-nav"><a class="brand" href="#top">☾ ミケ丸</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">☰ メニュー</button><div class="nav-links" id="main-menu"><a href="#profile">自己紹介</a><a href="#rules">ルール</a><a href="#tags">タグ</a><a href="#goals">目標</a><a href="#artists">絵師様</a><a href="#history">入賞記録</a><a href="links.html">LINK</a></div></nav></header><main><section class="hero"><div class="moon">☾ ✦</div><div class="eyebrow">OFFICIAL WEBSITE</div>
 <!-- =======================================================
   ★ トップページ立ち絵の差し替え場所 ★
