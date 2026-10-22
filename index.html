@@ -234,29 +234,31 @@ body::before {
   0%, 68% {
     opacity: 0;
     translate: 0 0;
+    clip-path: inset(0 0 0 100%);
   }
 
   70% {
-    opacity: 0;
-    translate: 0 0;
-  }
-
-  71% {
     opacity: 1;
+    translate: 0 0;
+    clip-path: inset(0 0 0 0);
   }
 
   76% {
     opacity: 1;
+    translate: 55vw 26vw;
+    clip-path: inset(0 0 0 0);
   }
 
   80% {
     opacity: 0;
-    translate: calc(100vw + 300px) 230px;
+    translate: 80vw 38vw;
+    clip-path: inset(0 0 0 100%);
   }
 
   100% {
     opacity: 0;
-    translate: calc(100vw + 300px) 230px;
+    translate: 80vw 38vw;
+    clip-path: inset(0 0 0 100%);
   }
 }
 
