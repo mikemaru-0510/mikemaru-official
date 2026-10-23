@@ -30,7 +30,33 @@ body{position:relative;isolation:isolate;background-attachment:fixed}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(circle at 13% 19%,#d4e9ffbb 0 1px,transparent 2px),radial-gradient(circle at 75% 32%,#fff0cb99 0 1px,transparent 2px),radial-gradient(circle at 36% 72%,#c9c3ff99 0 1px,transparent 2px);background-size:270px 320px,390px 430px,310px 360px;animation:sky-glow 8s ease-in-out infinite alternate}
 @keyframes sky-glow{from{opacity:.35}to{opacity:.9}}
 .shooting-stars{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:1}
-.shooting-star{position:absolute;top:var(--top);left:-30%;width:110px;height:1px;transform:rotate(-24deg);background:linear-gradient(90deg,transparent,#bce6ff,#fff5d6);filter:drop-shadow(0 0 5px #9fd7ff);opacity:0;animation:shoot 15s linear infinite;animation-delay:var(--delay)}
+.shooting-star {
+  position: absolute;
+  top: var(--top, 15%);
+  left: -180px;
+  width: 130px;
+  height: 2px;
+  border-radius: 999px;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(169, 217, 255, 0.4),
+    rgba(255, 255, 255, 0.95)
+  );
+
+  box-shadow:
+    0 0 6px rgba(169, 217, 255, 0.7),
+    0 0 14px rgba(169, 217, 255, 0.35);
+
+  opacity: 0;
+  transform: rotate(25deg);
+  transform-origin: right center;
+
+  animation: shoot 15s linear infinite;
+  animation-delay: var(--delay, 0s);
+}
 @keyframes shoot{0%,78%{transform:translate3d(0,0,0) rotate(-24deg);opacity:0}79%{opacity:.9}85%{transform:translate3d(130vw,36vh,0) rotate(-24deg);opacity:0}100%{opacity:0}}
 .hero-character,.profile-character{filter:drop-shadow(0 0 14px #8acaff55) drop-shadow(0 0 32px #f6dca633);transition:filter .4s ease}
 .section h2::before,.group h2::before{content:'✧';color:#ffe2a7;margin-right:.55em;text-shadow:0 0 12px #ffdca9}
