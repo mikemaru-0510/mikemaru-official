@@ -88,6 +88,19 @@ body {
   text-shadow: 0 0 10px rgba(255, 225, 170, 0.9);
 }
 
+/* 基本情報カードだけに猫の装飾 */
+main > .section:first-of-type::after {
+  content: "🐈";
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  font-size: 38px;
+  line-height: 1;
+  opacity: 0.45;
+  filter: grayscale(1) brightness(0.65);
+  pointer-events: none;
+}
+
 </style>
 </head>
 <body>
