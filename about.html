@@ -24,6 +24,34 @@ body {
   background-attachment: fixed;
 }
 
+/* ふんわりガラスカード */
+.section {
+  position: relative;
+  background: linear-gradient(
+    145deg,
+    rgba(110, 139, 225, 0.19),
+    rgba(108, 77, 183, 0.13)
+  );
+  border: 1px solid rgba(174, 211, 255, 0.48);
+  border-radius: 26px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 35, 0.24),
+    0 0 18px rgba(133, 184, 255, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.section::before {
+  content: "✦";
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  color: #d8eaff;
+  text-shadow: 0 0 12px #8ac8ff;
+  pointer-events: none;
+}
+
 </style>
 </head>
 <body>
