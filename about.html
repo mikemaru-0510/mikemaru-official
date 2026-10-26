@@ -111,6 +111,32 @@ main > .section:nth-of-type(2) {
   padding-bottom: 160px;
 }
 
+/* 眠る猫のそばで光る星 */
+main > .section:nth-of-type(2)::before {
+  content: "✦";
+  position: absolute;
+  right: 155px;
+  bottom: 115px;
+  font-size: 20px;
+  color: #ffe8a6;
+  text-shadow:
+    0 0 8px #ffe8a6,
+    0 0 16px #9ad6ff;
+  pointer-events: none;
+  animation: catSparkle 3s ease-in-out infinite;
+}
+
+@keyframes catSparkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
 
 </style>
 </head>
