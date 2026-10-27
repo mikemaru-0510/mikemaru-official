@@ -111,21 +111,22 @@ main > .section:nth-of-type(2) {
   padding-bottom: 190px;
 }
 
-/* 眠る猫のそばで光る星 */
-main > .section:nth-of-type(2)::before {
-  content: "✦";
-  position: absolute;
-  top: auto;
-  right: 155px;
-  bottom: 115px;
-  font-size: 20px;
-  color: #ffe8a6;
-  text-shadow:
-    0 0 8px #ffe8a6,
-    0 0 16px #9ad6ff;
-  pointer-events: none;
-  animation: catSparkle 3s ease-in-out infinite;
+
+/* 猫の周りの小さな星とガラス背景 */
+main > .section:nth-of-type(2) {
+  background:
+    radial-gradient(circle at 68% 84%, #ffe8a6 0 2px, transparent 4px),
+    radial-gradient(circle at 92% 79%, #9ad6ff 0 2px, transparent 4px),
+    radial-gradient(circle at 64% 95%, #ffffff 0 1px, transparent 3px),
+    radial-gradient(circle at 96% 94%, #9ad6ff 0 1.5px, transparent 3px),
+    radial-gradient(circle at 80% 77%, #ffe8a6 0 1.5px, transparent 3px),
+    linear-gradient(
+      145deg,
+      rgba(110, 139, 225, 0.19),
+      rgba(108, 77, 183, 0.13)
+    );
 }
+
 
 @keyframes catSparkle {
   0%, 100% {
